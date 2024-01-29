@@ -29,11 +29,14 @@ app.get('/api/v1/pets', (req, res) => {
 app.get('/api/v1/pets/owner', (req, res) => {
     // get the owner from the request
 
+    const owner = req.query.owner
+
 
     // find the pet in the pets array
     const pet = pets.find(pet => pet.owner === owner);
 
     // send the pet as a response
+    res.send(pet);
 
 });
 
@@ -46,6 +49,8 @@ app.get('/api/v1/pets/:name', (req, res) => {
     const pet = pets.find(pet => pet.name === name);
 
     // send the pet as a response
+    res.send(pet);
+
 
 });
 
